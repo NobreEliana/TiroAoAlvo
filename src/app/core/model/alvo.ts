@@ -1,3 +1,19 @@
 export class Alvo {
-    wight:number;
+    widht: number;
+    height: number;
+    positionX: number;
+    positionY: number;
+
+    spawningAlvo(){
+
+    }
+
+    randomPosition(){
+
+    }
+
+    randomTamanho(){
+        
+    }
+
 }
