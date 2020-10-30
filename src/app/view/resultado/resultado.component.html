@@ -1,26 +1,28 @@
-<div class="background2" style="height: 657px;">
+<div class="background" [ngStyle]="{'height': '' + telaHeight + 'px'}">
     <div class="container">
         <div class =" d-flex align-items-center">
             <h1 class="score">SCORE</h1>
         </div>
-        <div class="row justify-content-center">
 
-            <div class="col-6 align-content-center titulo">
-                <span>Nome</span>
-                <span>Pontuação</span>
-                <span>Tempo</span>
-            </div>
-            <div class="col-8 align-content-center resultado">
-                <ul>
-                    <li>
-                        <span>Fulano </span>
-                        <span>100</span>
-                        <span>30</span>
+        <div class="row justify-content-center ">
+
+            
+            <div class="col-6  resultado">
+                <ul class="list-unstyled">
+                    <li class="row">
+                        <div class="col-4"><span>Nome</span></div>
+                        <div class="col-4"><span>Pontuação</span></div>
+                        <div class="col-4"><span>Tempo</span></div>
                     </li>
-                    <li>
-                        <span>Eliana </span>
-                        <span>110</span>
-                        <span>30</span>
+                    <li class="row">
+                        <div class="col-4"><span>Fulano </span></div>
+                        <div class="col-4"><span>100</span></div>
+                        <div class="col-4"><span>30</span></div>
+                    </li>
+                    <li class="row">
+                        <div class="col-4"><span>Eliana </span></div>
+                        <div class="col-4"><span>110</span></div>
+                        <div class="col-4"><span>30</span></div>
                     </li>
                 </ul>
             </div>

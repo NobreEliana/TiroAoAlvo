@@ -10,25 +10,35 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
  import { far } from '@fortawesome/free-regular-svg-icons';
  import { fas } from '@fortawesome/free-solid-svg-icons';
  import { fab } from '@fortawesome/free-brands-svg-icons';
-
+ import { ReactiveFormsModule } from '@angular/forms';
+import { AdAlvoComponent } from './core/ad-alvo/ad-alvo.component';
+import { InsertDirective } from './core/ad-alvo/insert.directive';
+import { AlvoComponent } from './core/alvo/alvo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     JogoComponent,
-    ResultadoComponent
+    ResultadoComponent,
+    AdAlvoComponent,
+    InsertDirective,
+    AlvoComponent
   ],
   imports: [
     AppRoutingModule,
     FontAwesomeModule,
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers:[],
+  entryComponents:[AlvoComponent, AdAlvoComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {
+
   constructor() {
     library.add(far, fas, fab);
+
   }
  }

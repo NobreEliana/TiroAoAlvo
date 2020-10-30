@@ -1,15 +1,37 @@
-import { ArrayType } from '@angular/compiler';
 
-export class Jogo {
+import { Injectable } from '@angular/core';
+import { Usuario } from './usuario';
+import { Fase } from './fase';
+
+@Injectable({
+  providedIn: 'root',
+})
+
+export class JogoService {
     vida: number;
     tempoJogo: number;
     pontuacao: number;
-    itsDificuldade: ArrayType;
-    nomeUsuario: string;
+    listDificuldade:any[];
+    usuario: Usuario;
     pontuacaoUsuario: number;
-    
-    iniciarJogo(nomeUsuario, vida,pontuacao,cenario){
+    fase: String;
 
+    
+    iniciarJogo(nomeUsuario ,nivel,cenario){
+        
+
+        
+
+        this.usuario = new Usuario(nomeUsuario, 0, 5);
+        
+        console.log(this.usuario);
+
+        this.fase= new Fase().fase[cenario];
+
+        console.log(this.fase);
+
+        
+        
     }
 
     removeAlvo(Alvo){

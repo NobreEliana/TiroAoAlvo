@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultadoComponent implements OnInit {
 
-  constructor() { }
+  telaHeight:Number;
+
+  constructor() {
+    this.telaHeight=window.innerHeight;
+   }
 
   ngOnInit() {
   }

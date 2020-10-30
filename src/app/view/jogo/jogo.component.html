@@ -1,5 +1,6 @@
-<div class="background" style= "height: 657px;">
-   <div class="container ">
+<div class="background" [ngStyle]="{'background-image': 'url(' + image + '.jpg)', 'height': ''+ telaHeight+ 'px'}">
+   <div class="container " #container>
+
 
         <div class="row justify-content-end header-top">
 
@@ -31,6 +32,9 @@
                     <span><span class="valor" >30</span>s</span>
                 </div>
             </div>
-        </div>   
+        </div>
+        
+        
+        
     </div>
 </div>
