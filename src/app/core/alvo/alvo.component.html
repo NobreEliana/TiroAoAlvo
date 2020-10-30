@@ -1,1 +1,4 @@
-<p>alvo works!</p>
+<div class="alvo" [ngStyle]="{'position':'absolute', 'left': ''+pos.positionX+'px', 'top': ''+pos.positionY+'px'}">
+    <a href="javascript:void(0)" (click)="onclick($event)"><p>alvo works!</p></a>
+    
+</div>

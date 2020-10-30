@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlvoService } from '../services/alvo.service';
 
 @Component({
   selector: 'app-alvo',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./alvo.component.less']
 })
 export class AlvoComponent implements OnInit {
+  pos:any;
 
-  constructor() { }
+  constructor( private alvoService:AlvoService) { }
 
   ngOnInit() {
+
+    
   }
 
+  onclick($event){
+    console.log($event);
+    this.alvoService.remove();
+  }
 }

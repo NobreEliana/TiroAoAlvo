@@ -11,8 +11,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
  import { fas } from '@fortawesome/free-solid-svg-icons';
  import { fab } from '@fortawesome/free-brands-svg-icons';
  import { ReactiveFormsModule } from '@angular/forms';
-import { AdAlvoComponent } from './core/ad-alvo/ad-alvo.component';
-import { InsertDirective } from './core/ad-alvo/insert.directive';
 import { AlvoComponent } from './core/alvo/alvo.component';
 
 @NgModule({
@@ -21,8 +19,6 @@ import { AlvoComponent } from './core/alvo/alvo.component';
     HomeComponent,
     JogoComponent,
     ResultadoComponent,
-    AdAlvoComponent,
-    InsertDirective,
     AlvoComponent
   ],
   imports: [
@@ -32,7 +28,7 @@ import { AlvoComponent } from './core/alvo/alvo.component';
     ReactiveFormsModule
   ],
   providers:[],
-  entryComponents:[AlvoComponent, AdAlvoComponent],
+  entryComponents:[AlvoComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {
