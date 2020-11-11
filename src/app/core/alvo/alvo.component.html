@@ -1,4 +1,3 @@
-<div class="alvo" [ngStyle]="{'position':'absolute', 'left': ''+pos.positionX+'px', 'top': ''+pos.positionY+'px'}">
-    <a href="javascript:void(0)" (click)="onclick($event)"><p>alvo works!</p></a>
-    
+<div class="alvo" [id]='id'  [ngStyle]="{'position':'absolute', 'left': ''+prop.positionX+'px', 'top': ''+prop.positionY+'px'}">
+    <a href="javascript:void(0)" ><img src="../../../assets/images/alvo.png" [ngStyle]="{'width':''+prop.size+'px'}"></a>    
 </div>

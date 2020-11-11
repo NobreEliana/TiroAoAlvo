@@ -3,9 +3,9 @@ export class Usuario {
     pontuacao: number;
     vida: number;
 
-    constructor(nome, pontuacao, vida) {
+    constructor(nome) {
         this.nome = nome;
-        this.pontuacao = pontuacao;
-        this.vida = vida;
+        this.pontuacao = 0;
+        this.vida = 5;
     }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JogoService } from 'src/app/core/services/jogo.service';
 
 @Component({
   selector: 'app-resultado',
@@ -9,11 +10,12 @@ export class ResultadoComponent implements OnInit {
 
   telaHeight:Number;
 
-  constructor() {
+  constructor(private _jogo:JogoService) {
     this.telaHeight=window.innerHeight;
    }
 
   ngOnInit() {
+    
   }
 
 }

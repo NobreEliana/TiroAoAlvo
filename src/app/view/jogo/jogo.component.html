@@ -5,13 +5,12 @@
         <div class="row justify-content-end header-top">
 
             <div class="col-4">
-                <span class ="nomeUser">Eliana</span>
+                <span class ="nomeUser">{{nome_usuario}}</span>
             </div>
 
-            <div class="col-4">
-                <fa-icon [icon]="['far', 'heart']"  class="icon"></fa-icon>
-                <fa-icon [icon]="['fas', 'heart']"  class="icon"></fa-icon>
-                <fa-icon [icon]="['fas', 'heart']"  class="icon"></fa-icon>
+            <div class="vidas col-4">
+                <!-- <fa-icon [icon]="['far', 'heart']"  class="icon"></fa-icon>
+                <fa-icon [icon]="['fas', 'heart']"  class="icon"></fa-icon> -->
             </div>
 
 
@@ -23,13 +22,13 @@
                 
                 <div class="pontuacao">
                     <img src="../../../assets/images/alvo.png" >
-                    <span><span class="valor" >0</span>points</span>
+                    <span><span class="valor" >{{_jogo.usuario.pontuacao}}</span>points</span>
                 </div>
             </div>
             <div class="col-2 align-content-center">
                 <div class="tempo">
                     <img src="../../../assets/images/tempo.png">
-                    <span><span class="valor" >30</span>s</span>
+                    <span><span class="valor" >{{_jogo.tempoJogo}}</span>s</span>
                 </div>
             </div>
         </div>

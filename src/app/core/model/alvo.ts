@@ -1,19 +1,11 @@
+import { Type } from '@angular/core';
+
 export class Alvo {
-    widht: number;
-    height: number;
-    positionX: number;
-    positionY: number;
+    constructor(public component: Type<any>,  public prop: AlvoProp){} 
+}
 
-    spawningAlvo(){
-
-    }
-
-    randomPosition(){
-
-    }
-
-    randomTamanho(){
-        
-    }
-
+export class AlvoProp{
+    public positionX: number; 
+    public positionY: number;
+    public size: number; 
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AlvoProp } from '../model/alvo';
 import { AlvoService } from '../services/alvo.service';
+
 
 @Component({
   selector: 'app-alvo',
@@ -7,17 +9,12 @@ import { AlvoService } from '../services/alvo.service';
   styleUrls: ['./alvo.component.less']
 })
 export class AlvoComponent implements OnInit {
-  pos:any;
+  public prop: AlvoProp;
+  id:number;
 
-  constructor( private alvoService:AlvoService) { }
+  constructor(public alvoService: AlvoService) { }
 
   ngOnInit() {
-
-    
-  }
-
-  onclick($event){
-    console.log($event);
-    this.alvoService.remove();
+    this.alvoService.removeAutoAlvo(this.id);    
   }
 }

@@ -12,25 +12,22 @@
                     <li class="row">
                         <div class="col-4"><span>Nome</span></div>
                         <div class="col-4"><span>Pontuação</span></div>
-                        <div class="col-4"><span>Tempo</span></div>
+                        <div class="col-4"><span>Vida</span></div>
+                        <!-- //colocar o campo vida -->
                     </li>
-                    <li class="row">
-                        <div class="col-4"><span>Fulano </span></div>
-                        <div class="col-4"><span>100</span></div>
-                        <div class="col-4"><span>30</span></div>
+                    <li class="row" *ngFor="let item of _jogo.listUsuarios">
+                        <div class="col-4"><span >{{item.nome}} </span></div>
+                        <div class="col-4"><span>{{item.pontuacao}}</span></div>
+                        <div class="col-4"><span>{{item.vida}}</span></div>
                     </li>
-                    <li class="row">
-                        <div class="col-4"><span>Eliana </span></div>
-                        <div class="col-4"><span>110</span></div>
-                        <div class="col-4"><span>30</span></div>
-                    </li>
+                    
                 </ul>
             </div>
         </div>
 
         <div class="row justify-content-center">
                 <div class="col-6 align-content-center ">
-                    <button type="button" class="btn btn-danger  botao"  >Novo Jogo</button>
+                    <button routerLink="Home" type="button" class="btn btn-danger  botao"  >Novo Jogo</button>
                 </div>
         </div>
     </div>

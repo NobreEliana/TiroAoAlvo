@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { JogoService } from 'src/app/core/model/jogo';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Fase } from 'src/app/core/model/fase';
+import { JogoService } from 'src/app/core/services/jogo.service';
 
 
 
@@ -24,7 +23,7 @@ export class HomeComponent implements OnInit {
     
   })
 
-  constructor( private _jogo:JogoService, private router:Router,
+  constructor(private _jogo:JogoService, private router:Router,
     private route: ActivatedRoute) {
     
    }
@@ -32,27 +31,22 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     
     this.telaHeight=window.innerHeight;
-  
+    this._jogo.initParam();
   }
 
   iniciarJogo(){
 
     let usuario = this.formInicio.value.usuario;
     let nivel = this.formInicio.value.nivel;
-    let cenario= this.formInicio.value.fase;
+    let cenario= this.formInicio.value.fase;    
 
     if (usuario === '' || nivel ==='' || cenario ===''){
       alert('Preencha todos os campos!')
 
-      return false
-      
+      return false;      
     }
 
-    this.router.navigate(['/Jogo']);
-    
-    this._jogo.iniciarJogo(usuario,nivel,cenario);
-  
-    console.log(this.formInicio.value.usuario);
-
+    this.router.navigate(['/Jogo'], {state: {usuario,nivel,cenario}});
+   
   }
 }

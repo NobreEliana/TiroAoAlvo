@@ -1,12 +1,13 @@
 export class Fase {
-    fase:any[]=["cenario1","cenario2"];
+    fase:any[];
 
     constructor(){
-
+        this.fase = ["cenario1","cenario2"];
     }
 
     criarCenario(cenario){
-
+        return this.fase[cenario];
         
     }
 }
+
