@@ -11,19 +11,21 @@
            
             <form [formGroup]="formInicio" class="  form-row  w-100" >
                 <div class="form-group col-12">
-                    <label for="usuario">Nome do Jogador:</label>
-                    <input formControlName="usuario" name="usuario" class="form-control" type="text" id='usuario'>
+                    <label for="usuario">Nome:</label>
+                    <input formControlName="usuario" name="usuario" class="form-control" type="text" id='usuario' placeholder="Insira o seu nome">
                 </div>
                 <div class="form-group col-6  ">
-                    <label for="fase">Selecione a fase:</label>
+                    <label for="fase">Fase:</label>
                     <select formControlName="fase" name="fase" class="form-control" id="fase">
+                        <option value="" selected>Selecione a Fase</option>
                         <option value="0">Fase 1</option>
                         <option value="1">Fase 2</option>
                     </select>
                 </div>
                 <div class="form-group col-6 ">
-                    <label for="nivel">Selecione o nível</label>
+                    <label for="nivel">Nível</label>
                     <select formControlName="nivel"  name="nivel" class="form-control" id="nivel"  >
+                        <option value="" selected>Selecione o Nível </option>
                         <option *ngFor="let item of _jogo.listDificuldade" value="{{item.id}}">{{item.nome}}</option>
                     </select>
                 </div>
@@ -36,3 +38,5 @@
 </div>
     </div>
 </div>
+
+<app-modal></app-modal>

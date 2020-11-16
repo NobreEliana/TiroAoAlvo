@@ -13,6 +13,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
  import { ReactiveFormsModule } from '@angular/forms';
 import { AlvoComponent } from './core/alvo/alvo.component';
 import { VidaComponent } from './core/vida/vida.component';
+import { ModalComponent } from './core/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { VidaComponent } from './core/vida/vida.component';
     JogoComponent,
     ResultadoComponent,
     AlvoComponent,
-    VidaComponent
+    VidaComponent,
+    ModalComponent
   ],
   imports: [
     AppRoutingModule,

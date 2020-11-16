@@ -12,6 +12,8 @@ export class VidaService {
   vidacomponentRef:ComponentRef<VidaComponent>;
   listcomponentRef:CtType[];
   counter:number=0;
+  vida:number;
+ 
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver,
     private appRef: ApplicationRef,

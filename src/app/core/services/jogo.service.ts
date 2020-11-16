@@ -27,8 +27,9 @@ export class JogoService {
     private intevalInit: any;
     private intevalCron: any;
     telaHeight: number;
+    tempoTotal:number;
 
-    constructor(private alvoService: AlvoService,  private vidaService: VidaService, private router: Router){
+    constructor(private alvoService: AlvoService, private vidaService:VidaService, private router: Router){
       this.listUsuarios= [];
     }  
 
@@ -38,9 +39,10 @@ export class JogoService {
 
     public initParam(){
       this.tempoJogo= 0;
+      this.tempoTotal= 20;
       this.pontuacao=5;
       this.listDificuldade=[];
-      this.listDificuldade.push( {id:0, tempo:2000, nome:"Facil"},  {id:1, tempo: 1000, nome:"Médio"},  {id:2, tempo: 700, nome:"Dificil"});
+      this.listDificuldade.push( {id:0, tempo:2000, nome:"Facil"},  {id:1, tempo: 1000, nome:"Médio"},  {id:2, tempo: 800, nome:"Dificil"});
       this.telaHeight=window.innerHeight;
     }
 
@@ -49,35 +51,42 @@ export class JogoService {
 
         this.usuario = new Usuario(usuario);
         this.fase= new Fase().criarCenario(cenario);
+        this.vidaService.vida = this.usuario.vida;
+
+        this.alvoService.levelTime = this.listDificuldade[nivel].tempo;
 
         for (let i = 0; i < this.usuario.vida; i++) {
-          this.vidaService.add(new Vida(VidaComponent));          
+          this.vidaService.add(new Vida(VidaComponent));
+        //  this.alvoService.addVida( VidaComponent);          
         }        
         
-        this.spawningAlvos();
 
         this.intevalInit = setInterval(()=>{
+          
 
           this.spawningAlvos();
 
-          if(this.tempoJogo >= 60 || this.usuario.vida <= 0){
+          if(this.tempoJogo >= this.tempoTotal || this.vidaService.vida <= 0){
             clearInterval(this.intevalInit);
             clearInterval(this.intevalCron);
           
           //     //    salva o usuario na lista de usuario
+            this.usuario.vida = this.vidaService.vida;
             this.listUsuarios.push( this.usuario );
 
           //     //    salvar usuario no sessionStore ou localStore
           localStorage.setItem("jogo", JSON.stringify(this.listUsuarios));
 
           let item = JSON.parse(localStorage.getItem("jogo"));
-
+          
+           clearTimeout(this.alvoService.timeOut);
            this.router.navigate(['/Resultado']);
+
           }
 
         }, this.listDificuldade[nivel].tempo);
         
-        console.log(this.usuario.pontuacao);
+        
        
     }
    
@@ -94,17 +103,8 @@ export class JogoService {
       
     }
 
-    removeVida(){
-      this.vidaService.remove();
-    }
+  
 
-    removeAutoAlvo(id: number){
-        setTimeout(()=>{
-          this.alvoService.removeById(id);
-          this.calculaVida();
-          this.removeVida();
-        },this.listDificuldade[this.nivel].tempo);
-    }
 
     calcularPontuacao(){
       this.usuario.pontuacao+=this.pontuacao;
@@ -122,8 +122,8 @@ export class JogoService {
         positionY-=size;
       }
 
-      if(positionY < 105 ){
-        positionY+=(positionY - 105);
+      if(positionY < 200 ){
+        positionY+=200;
       }
 
       return positionY;
