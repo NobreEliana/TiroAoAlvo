@@ -1,6 +1,7 @@
 import { Injectable, ComponentRef, ComponentFactoryResolver, ApplicationRef, Injector, EmbeddedViewRef, Type } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
 import { Modal, Mensagem } from '../model/modal';
+import { CtType } from '../model/ad-type';
 
 
 @Injectable({
@@ -8,11 +9,13 @@ import { Modal, Mensagem } from '../model/modal';
 })
 export class ModalService {
   modalcomponentRef:ComponentRef<ModalComponent>;
+  listComponentRef:CtType[];
+  counter:number = 0;
   
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver,
     private appRef: ApplicationRef,
-    private injector: Injector) { }
+    private injector: Injector) {this.listComponentRef= []; }
 
   private appendModal(type:Modal){
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(type.component);
@@ -25,6 +28,15 @@ export class ModalService {
     
     this.modalcomponentRef = componentRef;
     this.modalcomponentRef.instance.mensagem = type.mensagem;
+
+    this.listComponentRef.push(new CtType(this.modalcomponentRef,this.counter));
+    this.counter++;
+    if(this.listComponentRef.length > 1 ){
+      let componentRef = this.listComponentRef.shift();
+      this.appRef.detachView(componentRef.component.hostView);
+      componentRef.component.destroy();
+    }
+    
   }
 
   private removeModal(){

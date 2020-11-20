@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef } from '@angular/core';
 import { ModalService } from '../services/modal.service';
 import { Mensagem } from '../model/modal';
 
@@ -10,11 +10,20 @@ import { Mensagem } from '../model/modal';
 export class ModalComponent implements OnInit {
 
   mensagem:Mensagem;
+  resultado:number=50;
 
 
-  constructor( private modalService:ModalService) { }
-
+  constructor( private modalService:ModalService, private el:ElementRef) { }
   ngOnInit() {
+
+  setTimeout(() => {
+    let modalSize=document.querySelector(".modal-dialog").clientWidth;
+
+    this.resultado = 50-((modalSize * 100 / window.innerWidth) / 2);
+    
+  }, 2); 
+  
+    
   }
 
   removeModal(){
