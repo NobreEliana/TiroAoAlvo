@@ -5,7 +5,8 @@ export class Alvo {
 }
 
 export class AlvoProp{
-    public positionX: number; 
-    public positionY: number;
-    public size: number; 
+    constructor(
+    public positionX: number,
+    public positionY: number,
+    public size: number){} 
 }

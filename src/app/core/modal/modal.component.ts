@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalService } from '../services/modal.service';
+import { Mensagem } from '../model/modal';
 
 @Component({
   selector: 'app-modal',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalComponent implements OnInit {
 
-  constructor() { }
+  mensagem:Mensagem;
+
+
+  constructor( private modalService:ModalService) { }
 
   ngOnInit() {
+  }
+
+  removeModal(){
+    this.modalService.remove();
   }
 
 }

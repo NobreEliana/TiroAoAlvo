@@ -91,10 +91,9 @@ export class JogoService {
     }
    
     private spawningAlvos() {
-      let prop = new AlvoProp();
-      prop.size = this.randomSize();
-      prop.positionX = this.randomPositionX(prop.size);
-      prop.positionY = this.randomPositionY(prop.size);
+      let size = this.randomSize();
+      let prop = new AlvoProp(this.randomPositionX(size), this.randomPositionY(size), size);
+
       this.alvoService.spawningAlvo(new Alvo(AlvoComponent, prop));
     }
 

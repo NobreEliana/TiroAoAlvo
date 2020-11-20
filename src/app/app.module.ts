@@ -32,7 +32,7 @@ import { ModalComponent } from './core/modal/modal.component';
     ReactiveFormsModule
   ],
   providers:[],
-  entryComponents:[AlvoComponent, VidaComponent],
+  entryComponents:[AlvoComponent, VidaComponent, ModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {
