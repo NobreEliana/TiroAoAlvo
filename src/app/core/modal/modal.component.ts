@@ -16,13 +16,13 @@ export class ModalComponent implements OnInit {
   constructor( private modalService:ModalService, private el:ElementRef) { }
   ngOnInit() {
 
-  setTimeout(() => {
-    let modalSize=document.querySelector(".modal-dialog").clientWidth;
+    setTimeout(() => {
+      let modalSize=document.querySelector(".modal-dialog").clientWidth;
+      this.resultado = 50-((modalSize * 100 / window.innerWidth) / 2);      
+    },2);
+  }
 
-    this.resultado = 50-((modalSize * 100 / window.innerWidth) / 2);
-    
-  }, 2); 
-  
+  cancelar(){
     
   }
 

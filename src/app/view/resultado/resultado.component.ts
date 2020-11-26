@@ -10,7 +10,7 @@ export class ResultadoComponent implements OnInit {
 
   telaHeight:Number;
 
-  constructor(private _jogo:JogoService) {
+  constructor(public _jogo:JogoService) {
     this.telaHeight=window.innerHeight;
    }
 

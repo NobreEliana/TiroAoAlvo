@@ -28,7 +28,7 @@ export class JogoComponent implements OnInit, OnDestroy {
   nome_usuario:String;
   pontuacaoUsuario:number;
 
-  constructor(private _jogo:JogoService, private router:Router, private route: ActivatedRoute) {  }
+  constructor(public _jogo:JogoService, private router:Router, private route: ActivatedRoute) {  }
 
   ngOnInit() {   
     this.telaHeight=window.innerHeight;

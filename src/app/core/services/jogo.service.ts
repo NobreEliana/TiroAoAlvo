@@ -49,7 +49,7 @@ export class JogoService {
     iniciarJogo(usuario ,nivel, cenario){
         this.cronometro();    
 
-        this.usuario = new Usuario(usuario);
+        this.usuario = new Usuario(usuario, this.listDificuldade[nivel].nome);
         this.fase= new Fase().criarCenario(cenario);
         this.vidaService.vida = this.usuario.vida;
 
@@ -72,12 +72,37 @@ export class JogoService {
           
           //     //    salva o usuario na lista de usuario
             this.usuario.vida = this.vidaService.vida;
-            this.listUsuarios.push( this.usuario );
+            let index = -1;
+
+            this.listUsuarios.find((usuario, _index) =>{ 
+              
+              if(usuario.nome == this.usuario.nome){
+                index = _index;
+                return usuario; 
+              }
+              
+              
+
+            });
+
+            if(index == -1){
+              this.listUsuarios.push( this.usuario );
+
+            }
+            else{
+              if(this.usuario.pontuacao > this.listUsuarios[index].pontuacao){
+                this.listUsuarios[index] = this.usuario; 
+              }
+            }
+            
+
+            
 
           //     //    salvar usuario no sessionStore ou localStore
-          localStorage.setItem("jogo", JSON.stringify(this.listUsuarios));
+          // localStorage.setItem("jogo", JSON.stringify(this.listUsuarios));
+          // let item = JSON.parse(localStorage.getItem("jogo"));
 
-          let item = JSON.parse(localStorage.getItem("jogo"));
+          
           
            clearTimeout(this.alvoService.timeOut);
            this.router.navigate(['/Resultado']);

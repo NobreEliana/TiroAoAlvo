@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
     
   })
 
-  constructor(private _jogo:JogoService, private router:Router,
+  constructor(public _jogo:JogoService, private router:Router,
     private route: ActivatedRoute, private modalService:ModalService) {
     
    }

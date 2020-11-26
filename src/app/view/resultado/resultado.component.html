@@ -10,15 +10,17 @@
             <div class="col-6  resultado">
                 <ul class="list-unstyled">
                     <li class="row">
-                        <div class="col-4"><span>Nome</span></div>
-                        <div class="col-4"><span>Pontuação</span></div>
-                        <div class="col-4"><span>Vida</span></div>
+                        <div class="col-3"><span>Nome</span></div>
+                        <div class="col-3"><span>Pontos</span></div>
+                        <div class="col-3"><span>Nível</span></div>
+                        <div class="col-3"><span>Vida</span></div>
                         <!-- //colocar o campo vida -->
                     </li>
                     <li class="row" *ngFor="let item of _jogo.listUsuarios">
-                        <div class="col-4"><span >{{item.nome}} </span></div>
-                        <div class="col-4"><span>{{item.pontuacao}}</span></div>
-                        <div class="col-4"><span>{{item.vida}}</span></div>
+                        <div class="col-3"><span >{{item.nome}} </span></div>
+                        <div class="col-3"><span>{{item.pontuacao}}</span></div>
+                        <div class="col-3"><span>{{item.nivel}}</span></div>
+                        <div class="col-3"><span>{{item.vida}}</span></div>
                     </li>
                     
                 </ul>
