@@ -5,3 +5,65 @@
     padding: 20px;
     border-radius: 8px;
 }
+
+
+@media (min-width: 700px) and (max-width: 850px) and (orientation: landscape) {
+
+    img{
+        width: 85%!important;
+        margin-left: 20px;
+    }
+
+    .form-row{
+        padding: 10px;
+    }
+    .form-row>[class*=col-] {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+    .form-group {
+        margin-bottom: 0.1rem;
+       
+        .title{
+            margin-bottom: .2rem;
+        }
+        .btn{
+            margin: 5px;
+
+        }
+    }
+
+}
+
+
+@media (max-width: 699px) and (orientation: landscape) {
+
+    
+        
+    
+    
+    img{
+        width: 80%!important;
+        margin-left: 65px;
+    }
+    
+
+    .form-row{
+        padding: 8px;
+    }
+
+    .form-row>[class*=col-] {
+        padding-right: 5px;
+        padding-left: 5px;
+        padding-top: 2px;
+    }
+
+
+    .form-group {
+        margin-bottom: 0.5em;
+        label{
+            display: none;
+        }
+    }
+
+}

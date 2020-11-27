@@ -74,25 +74,18 @@ export class JogoService {
             this.usuario.vida = this.vidaService.vida;
             let index = -1;
 
-            this.listUsuarios.find((usuario, _index) =>{ 
-              
+            this.listUsuarios.find((usuario, _index) =>{              
               if(usuario.nome == this.usuario.nome){
                 index = _index;
                 return usuario; 
               }
-              
-              
-
             });
 
             if(index == -1){
               this.listUsuarios.push( this.usuario );
-
-            }
-            else{
-              if(this.usuario.pontuacao > this.listUsuarios[index].pontuacao){
-                this.listUsuarios[index] = this.usuario; 
-              }
+            }else{
+                this.listUsuarios.splice(index);
+                this.listUsuarios.push(this.usuario);
             }
             
 
