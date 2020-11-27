@@ -1,13 +1,13 @@
 <div class="background" [ngStyle]="{'height': '' + telaHeight + 'px'}">
     <div class="container">
-        <div class =" d-flex align-items-center">
+        <div class =" d-flex justify-content-center">
             <h1 class="score">SCORE</h1>
         </div>
 
         <div class="row justify-content-center ">
 
             
-            <div class="col-6  resultado">
+            <div class="col-6 col-sm-10  resultado">
                 <ul class="list-unstyled">
                     <li class="row">
                         <div class="col-3"><span>Nome</span></div>
@@ -17,7 +17,7 @@
                         <!-- //colocar o campo vida -->
                     </li>
                     <li class="row" *ngFor="let item of _jogo.listUsuarios">
-                        <div class="col-3"><span >{{item.nome}} </span></div>
+                        <div class="col-3"><span>{{item.nome.replace(' ','_')| slice:0:10}} </span></div>
                         <div class="col-3"><span>{{item.pontuacao}}</span></div>
                         <div class="col-3"><span>{{item.nivel}}</span></div>
                         <div class="col-3"><span>{{item.vida}}</span></div>
@@ -28,7 +28,7 @@
         </div>
 
         <div class="row justify-content-center">
-                <div class="col-6 align-content-center ">
+                <div class="col-6 col-sm-8 d-flex justify-content-center ">
                     <button routerLink="Home" type="button" class="btn btn-danger  botao"  >Novo Jogo</button>
                 </div>
         </div>

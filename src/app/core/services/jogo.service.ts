@@ -39,7 +39,7 @@ export class JogoService {
 
     public initParam(){
       this.tempoJogo= 0;
-      this.tempoTotal= 20;
+      this.tempoTotal= 50;
       this.pontuacao=5;
       this.listDificuldade=[];
       this.listDificuldade.push( {id:0, tempo:2000, nome:"Facil"},  {id:1, tempo: 1000, nome:"Médio"},  {id:2, tempo: 800, nome:"Dificil"});
@@ -134,13 +134,15 @@ export class JogoService {
     public randomPositionY(size:number){
       let positionY= Math.random()*window.innerHeight;
       let windowHeight= window.innerHeight;
+      let headerHeight= document.querySelector(".header-top").clientHeight;
+      console.log(headerHeight);
 
       if(positionY +size >= windowHeight){
         positionY-=size;
       }
 
-      if(positionY < 200 ){
-        positionY+=200;
+      if(positionY < headerHeight ){
+        positionY+=headerHeight;
       }
 
       return positionY;
@@ -151,7 +153,10 @@ export class JogoService {
       let windowWidth = window.innerWidth;
       
       if(positionX + size >= windowWidth){
-        positionX-=size;
+        positionX -= (size + 10);
+      }
+      if(positionX == 0){
+        positionX+=10;
       }
        return positionX;
     }

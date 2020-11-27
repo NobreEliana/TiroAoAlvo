@@ -7,62 +7,34 @@
 }
 
 
-@media (min-width: 700px) and (max-width: 850px) and (orientation: landscape) {
+@media (max-height: 414px) and (orientation: landscape) {
 
     img{
-        width: 85%!important;
-        margin-left: 20px;
+        width: 55%!important;
+        margin:0 auto;
+        padding: 0.6rem!important;
+        display: flex;
+    
     }
+    
 
     .form-row{
         padding: 10px;
+        label{
+            display: none;
+        }
     }
     .form-row>[class*=col-] {
         padding-right: 5px;
         padding-left: 5px;
+        margin-bottom: 5px;;
     }
     .form-group {
-        margin-bottom: 0.1rem;
+        margin-bottom: 0.2rem;
        
-        .title{
-            margin-bottom: .2rem;
-        }
         .btn{
             margin: 5px;
 
-        }
-    }
-
-}
-
-
-@media (max-width: 699px) and (orientation: landscape) {
-
-    
-        
-    
-    
-    img{
-        width: 80%!important;
-        margin-left: 65px;
-    }
-    
-
-    .form-row{
-        padding: 8px;
-    }
-
-    .form-row>[class*=col-] {
-        padding-right: 5px;
-        padding-left: 5px;
-        padding-top: 2px;
-    }
-
-
-    .form-group {
-        margin-bottom: 0.5em;
-        label{
-            display: none;
         }
     }
 

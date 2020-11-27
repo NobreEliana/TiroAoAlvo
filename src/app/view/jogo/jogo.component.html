@@ -1,14 +1,14 @@
 <div class="background" [ngStyle]="{'background-image': 'url(' + image + '.png)', 'height': ''+ telaHeight+ 'px'}">
    <div class="container jogo_content" #container>
 
+    <div class="header-top">
+        <div class="row">
 
-        <div class="row justify-content-end header-top">
-
-            <div class="col-4">
+            <div class="col-3">
                 <span class ="nomeUser">{{nome_usuario}}</span>
             </div>
 
-            <div class="vidas col-4">
+            <div class="vidas col-5">
                 <!-- <fa-icon [icon]="['far', 'heart']"  class="icon"></fa-icon>
                 <fa-icon [icon]="['fas', 'heart']"  class="icon"></fa-icon> -->
             </div>
@@ -18,21 +18,21 @@
 
         <div class="row justify-content-center">
 
-            <div class="col-2 align-content-center">
+            <div class=" col-4 col-sm-4 col-md-3  align-content-center">
                 
                 <div class="pontuacao">
                     <img src="../../../assets/images/alvo.png" >
                     <span><span class="valor" >{{_jogo.usuario.pontuacao}}</span>points</span>
                 </div>
             </div>
-            <div class="col-2 align-content-center">
+            <div class=" col-3 col-sm-3 col-md-2 align-content-center">
                 <div class="tempo">
                     <img src="../../../assets/images/tempo.png">
                     <span><span class="valor" >{{_jogo.tempoJogo}}</span>s</span>
                 </div>
             </div>
         </div>
-        
+    </div>    
         
         
     </div>

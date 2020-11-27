@@ -2,7 +2,7 @@
     <div class="container">
 
         <div class="row justify-content-center ">
-                <div class=" image col-10 col-sm-8 col-md-6">
+                <div class=" image col-8 col-sm-10 col-md-6">
                     <img src="../../../assets/images/Tiro-ao-Alvo.png" class="w-100 p-4">
                 </div>                
             </div>
@@ -11,11 +11,11 @@
            
             <form [formGroup]="formInicio" class="  form-row  w-100" >
                 <div class="form-group col-12">
-                    <label class ="title " for="usuario">Nome:</label>
+                    <label  for="usuario">Nome:</label>
                     <input formControlName="usuario" name="usuario" class="form-control" type="text" id='usuario' placeholder="Insira o seu nome">
                 </div>
                 <div class="form-group col-6  ">
-                    <label class ="title " for="fase">Fase:</label>
+                    <label  for="fase">Fase:</label>
                     <select formControlName="fase" name="fase" class="form-control" id="fase">
                         <option value="" selected>Selecione a Fase</option>
                         <option value="0">Fase 1</option>
@@ -23,7 +23,7 @@
                     </select>
                 </div>
                 <div class="form-group col-6 ">
-                    <label class ="title "for="nivel">Nível</label>
+                    <label for="nivel">Nível</label>
                     <select formControlName="nivel"  name="nivel" class="form-control" id="nivel"  >
                         <option value="" selected>Selecione o Nível </option>
                         <option *ngFor="let item of _jogo.listDificuldade" value="{{item.id}}">{{item.nome}}</option>
